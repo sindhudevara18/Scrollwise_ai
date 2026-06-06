@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "ScrollWise AI",
+  "version": "1.0",
+  "description": "Tracks browsing and scrolling behavior for digital wellness insights.",
+  "permissions": ["storage", "activeTab", "tabs"],
+  "host_permissions": [
+    "https://www.youtube.com/*",
+    "http://localhost:3000/*",
+    "http://127.0.0.1:3000/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "ScrollWise AI"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
